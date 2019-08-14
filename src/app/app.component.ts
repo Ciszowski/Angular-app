@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Your_name = 'Anthony';
+  links = [ 'auth', 'appareils']
+  activeLinks = this.links[0]
+  
 }

@@ -1,0 +1,28 @@
+<mat-card class="cardEdit">
+    <mat-card-header>
+        <h2 class="mat-title"> Editer appareils</h2>
+    </mat-card-header>
+    <form (ngSubmit)="onSubmit(f)" #f='ngForm'>
+        <mat-card-content class="cardContent">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput class="form-control" placeholder="Nom de l'appareil" name="name" ngModel
+                            required>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <mat-select placeholder="état de l'appareil" class="form-control" name="status" [ngModel]="defaultOnOff">
+                            <mat-option value="allumé">allumé</mat-option>
+                            <mat-option value="éteint"> éteint</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="cardSubmit">
+            <button mat-raised-button color="primary" [disabled]="f.invalid" type="submit">Submit</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

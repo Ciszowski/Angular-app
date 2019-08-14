@@ -1,0 +1,6 @@
+.container{
+    margin: 5px 50px;
+    display: flex;
+    flex-flow: column wrap;    
+    justify-content: space-between;
+}

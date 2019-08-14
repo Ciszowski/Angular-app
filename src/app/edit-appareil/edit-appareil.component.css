@@ -1,0 +1,14 @@
+.cardEdit{
+    width : 70%;
+    height: 250px;
+    margin: 5% auto;
+    display: flex;
+}
+.cardContent{
+    flex-flow: column wrap;
+    align-self: center;
+}
+.cardSubmit{
+    flex-direction: row;
+    align-self: flex-end;   
+}

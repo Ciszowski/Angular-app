@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="userForm" (ngSubmit)='onSubmitForm()'>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput placeholder="Firstname" formControlName="firstName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col">
+                <mat-form-field>
+                    <input matInput placeholder="Lastname" formControlName="lastName">
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput placeholder="email address" formControlName="email">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-select formControlName="drinkPref">
+                        <mat-option value="Eau"> Eau </mat-option>
+                        <mat-option value="Lait"> Lait </mat-option>
+                        <mat-option value="coca"> Coca </mat-option>
+                        <mat-option value="Bière"> Bière </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div formArrayName="hobbies">  
+                <h3> Vos hobbies</h3>
+                <mat-form-field *ngFor="let hobbyControl of getHobbies().controls; let i = index">
+                    <input matInput [formControlName]="i" placeholder="hobby">
+                </mat-form-field>
+                <button type="button" mat-button (click)="onAddHobby()"> Ajouter un hobby</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button type="submit" [disabled]="userForm.invalid">Soumettre</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

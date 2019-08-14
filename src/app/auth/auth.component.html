@@ -1,0 +1,11 @@
+<h2 matLine > Authentification </h2>
+<button mat-raised-button
+    [disabled]='authStatus'
+    style="background-color:limegreen"
+    (click)="onSignIn()" 
+    matTooltip="Welcome to my first angular app"> Connexion </button>
+
+<button mat-raised-button
+    [disabled]='!authStatus'
+    color="warn"
+    (click)="onSignOut()">Déconnexion </button> 

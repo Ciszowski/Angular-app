@@ -1,0 +1,12 @@
+.customer{
+    display: flex;
+    flex-flow: row wrap;
+    margin : 1rem 0;
+}
+.navList{
+    width : 100%;
+
+}
+.matList{
+    margin: auto 1rem;
+}

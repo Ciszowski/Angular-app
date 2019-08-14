@@ -1,0 +1,21 @@
+<div>
+    <mat-card class="header">
+        <h4> Nouveau client </h4>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Votre Nom" name="name" [(ngModel)]='client'>
+            </mat-form-field>
+            <button mat-raised-button>Montrer</button>
+        </form>
+    </mat-card>
+    <mat-card class="card">
+        <p matLine> Dernière mise à jour: {{ lastUpdate | async | date :'short'  }} </p>
+        <mat-list>
+            <app-apparei *ngFor="let app of appareil ; let i = index" [indexOfAppareil]="i" [name]="app.name"
+                [appareilStatus]='app.status' [id]="app.id">
+            </app-apparei>
+        </mat-list>
+        <button mat-raised-button color="primary" (click)="onSave()">Sauvegarder</button>
+        <button mat-raised-button color="warn" (click)="onFetch()">Charger les données</button>
+    </mat-card>
+</div>

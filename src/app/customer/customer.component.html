@@ -1,0 +1,21 @@
+<div class="customer">
+    <mat-nav-list class="navList">
+        <a mat-list-item routerLink="/new-users">Nouvel Utilisateur</a>
+    </mat-nav-list>
+
+    <!--ici je fais un map de l'object et place toute les données -->
+    <mat-card *ngFor="let user of users" class="matList">
+        <mat-card-title>
+            <h3> {{user.firstName}} {{user.lastName}} </h3>
+        </mat-card-title>
+        <mat-card-content>
+            <p matLine> {{user.email}} </p>
+            <p matLine> Cette personne aime de préférence boire de l'/la {{user.drinkPref}} </p>
+            <p matLine *ngIf="user.hobbies && user.hobbies.length > 0">
+                Cette personne a des hobbies
+                <span *ngFor="let hoby of user.hobbies"> <br> {{ hoby }} </span>
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+</div>
