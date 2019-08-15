@@ -3,6 +3,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatButtonModule,
        MatCheckboxModule, 
        MatListModule, 
@@ -31,6 +32,7 @@ const MaterialComponent=[
   MatInputModule,
   MatFormFieldModule,
   MatToolbarModule,
+  ScrollingModule
 ]
 
 @NgModule({

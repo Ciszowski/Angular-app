@@ -1,0 +1,19 @@
+.cardCounter{
+    display: flex;
+    max-width: 300px;
+    margin: 5% 15%;
+    height: 400px;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 3px grey, -3px 2px 3px lightGrey;
+}
+mat-card-content{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.scroll{
+    height: 100px;
+    width: 300px;
+}

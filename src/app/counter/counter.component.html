@@ -1,0 +1,17 @@
+<mat-card class="cardCounter">
+    <mat-card-header class="mat-display-1">
+        {{titre}}
+    </mat-card-header>
+    <mat-card-content>
+        <p class="mat-display-2"> {{total}} </p>
+        <cdk-virtual-scroll-viewport *ngIf="allDetails" itemSize="50" class="scroll">
+            <div class="details" *cdkVirtualFor="let details of allDetails">
+                A {{details.date.toString()}} s'est produit un {{details.buttonClicked}}
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="decrement()"> decrement</button>
+        <button mat-raised-button (click)="increment()">increment</button>
+    </mat-card-actions>
+</mat-card>

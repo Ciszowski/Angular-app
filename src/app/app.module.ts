@@ -6,6 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+
+//ngrx
+import { StoreModule } from '@ngrx/store'
+import { reducer } from '../reducer/app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 //material
 import { MaterialModule } from './material/material.module'
 
@@ -27,9 +33,12 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { CheckFormComponent } from './check-form/check-form.component';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
+import { CounterComponent } from './counter/counter.component';
+
 
 
 const appRoutes : Routes = [
+  {path: 'counter', component: CounterComponent},
   {path: "users", canActivate: [AuthGuard], component: CustomerComponent},
   {path: "new-users", canActivate: [AuthGuard], component: NewCustomerComponent},
   {path : 'appareils',  canActivate:[AuthGuard] , component : NewCompoComponent },
@@ -53,7 +62,8 @@ const appRoutes : Routes = [
     NotFoundComponentComponent,
     EditAppareilComponent,
     CheckFormComponent,
-    NewCustomerComponent,    
+    NewCustomerComponent,
+    CounterComponent,    
   ],
   imports: [
     ReactiveFormsModule,
@@ -65,6 +75,11 @@ const appRoutes : Routes = [
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    StoreModule.forRoot({appState : reducer}),
+      StoreDevtoolsModule.instrument({
+        name:"First Angular App",
+        maxAge: 18,
+      }),
   ],
   providers: [
     AppareilServices,
